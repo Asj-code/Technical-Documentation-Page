@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Ruby - Technical Documentation Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <nav id="navbar">
+    <header>
+      <h2>Ruby Documentation</h2>
+    </header>
+    <ul class="nav-items">
+      <li><a class="nav-link" href="#What_is_Ruby?">What is Ruby?</a></li>
+      <li><a class="nav-link" href="#Understanding_Ruby_Variables">Understanding Ruby Variables</a></li>
+      <li><a class="nav-link" href="#Ruby_Number_Classes_and_Conversions">Ruby Number Classes and Conversions</a></li>
+      <li><a class="nav-link" href="#Ruby_Methods">Ruby Methods</a></li>
+      <li><a class="nav-link" href="#Ruby_Operators">Ruby Operators</a></li>
+      <li><a class="nav-link" href="#References">References</a></li>
+    </ul>
+  </nav>
+  <main id="main-doc">
+    <h1>Ruby Introduction</h1>
+    <section id="What_is_Ruby?" class="main-section">
+      <header>
+        <h2>What is Ruby?</h2>
+      </header>
+        <p>Ruby is an object-oriented interpreted scripting language. When we say it is interpreted we mean to say that the Ruby source code is compiled by an interpreter at the point of execution (similar in this regard to JavaScript and PHP). This
+          contrasts with compiled languages such as C or C++ where the code is pre-compiled into a binary format targeted to run on a specific brand of microprocessor.</p>
+        <p>There are advantages and disadvantages to being an interpreted language. A disadvantage is speed. Because the source code has to be interpreted at runtime this means that it runs slower than an equivalent compiled application. A secondary
+          concern for some is the fact that anyone who uses your application will also be able to see the source code. In the world of open source this is less of a problem than it used to be, but for some proprietary applications this might prove to
+          be unacceptable.</p>
+    </section>
+
+    <section id="Understanding_Ruby_Variables" class="main-section">
+      <header>
+        <h2>Understanding Ruby Variables</h2>
+      </header>
+        <p>Variables are essentially a way to store a value and assign a name to that value for reference purposes. Variables take various forms ranging from integers to strings of characters. In this chapter we will take a look at how variables are
+          declared and converted. We will also look at the much simpler area of Ruby constants.</p>
+        <h3>Ruby Constants</h3>
+        <p>A Ruby constant is used to store a value for the duration of a Ruby program's execution. Constants are declared by beginning the variable name with a capital letter (a common convention for declaring constants is to use uppercase letters
+          for the entire name). For example:</p>
+        <span><code>MYCONSTANT = "hello2"
+            (irb):34: warning: already initialized constant MYCONSTANT
+            => "hello2"</code></span>
+        <h3>Declaring a Variable</h3>
+        <p>Variables are declared and assigned values by placing the variable name and the value either side of the assignment operator (=). For example, to assign a value of 10 to a variable we will designate as "y" we would write the following:</p>
+        <span><code>y = 10</code></span>
+        <p>We have now created a variable called y and assigned it the value of 10.
+
+          In common with some other scripting languages, Ruby supports something called parallel assignment. This is useful if you need to assign values to a number of variables. One way to do this would be as follows:</p>
+        <span><code>a = 10
+            b = 20
+            c = 30
+            d = 40
+          </code></span>
+    </section>
+
+    <section id="Ruby_Number_Classes_and_Conversions" class="main-section">
+      <header>
+        <h2>Ruby Number Classes and Conversions</h2>
+      </header>
+        <p>Just about everything in Ruby is an object. Perhaps one of most surprising things is that even numbers are objects in Ruby. Most other programming languages treat numbers as primitives (which essentially means they are the building blocks
+          from which objects are built). This means that each number type is associated with a number class and can be manipulated using the methods of that class.</p>
+        <h3>Ruby Number Classes</h3>
+        <p>Ruby provides a number of built-in number classes. In this section we will explore some of the more commonly used classes.</p>
+        <ul>
+          <li>
+            <h4>Integer Class</h4>
+            <p>The base class from which the following number classes are derived.</p>
+          </li>
+          <li>
+            <h4>Fixnum Class</h4>
+            <p>A Fixnum holds Integer values that can be represented in a native machine word (minus 1 bit). This effectively means that the maximum range of a Fixnum value depends on the architecture of the system on which the code is executing.
+              If an operation performed on a Fixnum exceeds the range defined by the system's machine word, the value is automatically converted by the interpreter to a Bignum.</p>
+          </li>
+          <li>
+            <h4>Bignum Class</h4>
+            <p>Bignum objects hold integers that fall outside the range of the Ruby Fixnum class. When a calculation involving Bignum objects returns a result that will fit in a Fixnum, the result is converted to Fixnum.</p>
+          </li>
+          <li>
+            <h4>Float Class</h4>
+            <p>The Float object represents real numbers based on the native architecture‘s double-precision floating point representation.</p>
+          </li>
+        </ul>
+    </section>
+
+    <section id="Ruby_Methods" class="main-section">
+      <header>
+        <h2>Ruby Methods</h2>
+      </header>
+        <p>Ruby methods provide a way to organize code and promote re-use. Rather than create long sections of Ruby code, the code is instead organized into logical groups that can be called when needed and re-used without having to re-write the same
+          code over and over. Methods are simple to use, in fact you only need to do two things with a method, declare it and call it.</p>
+        <h3>Declaring and Calling a Ruby Method</h3>
+        <p>The syntax of a Ruby method is as follows:</p>
+        <span><code>def name( arg1, arg2, arg3, ... )
+            .. ruby code ..
+            return value
+            end</code></span>
+        <p>The name specifies how we will refer to this method when we call it. The args specify values that are passed through to the method to be processed. The ruby code section represents the body of the function that performs the processing. The
+          optional return statement allows a value to be returned to the section of code which called the method (for example to return a status or the result of a calculation).</p>
+        <p>The following simple example shows a method defined and called. All the method does is display a string:</p>
+        <span><code>def saysomething()
+            puts "Hello"
+            end
+
+            saysomething</code></span>
+    </section>
+
+    <section id="Ruby_Operators" class="main-section">
+      <header>
+        <h2>Ruby Operators</h2>
+      </header>
+        <p>In this chapter we will cover the basics of using operators in Ruby to build expressions. Ruby provides a number of different types of operators including:</p>
+        <ul>
+          <li>Assignment Operators</li>
+          <li>Math Operators</li>
+          <li>Comparison Operators</li>
+          <li>Bitwise Operators</li>
+        </ul>
+        <h3>The Anatomy of a Ruby Operation</h3>
+        <p>n Ruby, as with most other programming languages, operations consist of values on which the calculation is to be performed (called operands) and an operator which dictates the operation to be performed. Typically, the operands are placed
+          either side of the operator. Optionally, the assignment operator (=) can be used to assign the result of the operation to, for example, a variable. Let's take the most basic of operations, executed in irb:</p>
+        <span><code>irb(main):036:0> 1 + 1
+            => 2</code></span>
+        <p>Now let's assign the result to a variable called result:</p>
+        <span><code>irb(main):037:0> result = 1 + 1
+            => 2</code></span>
+    </section>
+
+    <section id="References" class="main-section">
+      <header>
+        <h2>References</h2>
+      </header>
+        <ul>
+          <li>All the documentation in this page is taken from <a href="https://www.techotopia.com/index.php/Ruby_Essentials">Ruby.org</a></li>
+        </ul>
+    </section>
+
+  </main>
+</body>
+
+</html>
